@@ -21,10 +21,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: varad-kulkarni172
 
+      - name: Check directory contents
+        run: ls -R
+
       - name: Move output to docs
         run: |
           mkdir -p docs
-          cp -r output/* docs/
+          cp -r profile-3d-contrib/* docs/
+
 
       - name: Commit and Push
         run: |
